@@ -1,0 +1,45 @@
+<div class="form-container">
+      <%= form_for( @tool, :html => { :multipart => true }, class: "form-horizontal" ) do |f| %>
+        <% if @tool.errors.any? %>
+          <div id="error_explanation" class="bit-warning">
+            <h2><%= pluralize(@tool.errors.count, "error") %> prohibited this tool from being saved:</h2>
+
+            <ul>
+            <% @tool.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label :barcode, "Barcode ID" %><br>
+          <%= f.text_field :barcode, class: "form-control", :placeholder => "Scan barcode", autofocus: true %>
+        </div>
+        <div class="form-group">
+          <%= f.label :description %><br>
+          <%= f.text_field :description, class: "form-control", :maxlength => 120, :size => 90 %>
+        </div>
+        <div class="form-group">
+          <%= f.label :quantity, "Qty" %><br>
+          <%= f.text_field :quantity, class: "form-control", :maxlength => 3, :size => 5 %>
+        </div>
+        <div class="form-group">
+          <%= f.label :image %><br>
+          <%= f.file_field :image %>
+        </div>
+      
+        <div class="form-group">
+          <%= f.label :tag_list, "Tags (separated by comma)" %>
+          <%= f.text_field :tag_list, class: "form-control" %>
+        </div>
+          
+        <div class="form-group">
+          <%= f.submit "submit", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+
+      <div>
+        <%= link_to 'Cancel', tools_path %>
+      </div>
+</div>

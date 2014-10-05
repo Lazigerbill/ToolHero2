@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :dashboards
   resources :tools
 
+  get 'tags/:tag', to: 'tools#index', as: :tag
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

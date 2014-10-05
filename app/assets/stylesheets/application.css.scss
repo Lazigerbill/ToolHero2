@@ -1,9 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+
 .navbar-default {
 	background-color: #F3DF79;
-	height: 88px;
+	height: 50px;
 	border-radius: 0px !important;
 }
 
@@ -23,10 +25,25 @@
 	color: #fff;
 }
 
-.navbar-header, .collapse, .navbar-collapse {
-	padding-top: 15px;
+// .navbar-header, .collapse, .navbar-collapse {
+// 		padding-top: 5px;
+// }
+
+// .navbar-right {
+// 		padding-top: 5px;
+// }
+
+// .form-container {
+// 	width: 350px;
+// }
+
+.sign-in {
+	border: 1px solid #DADFE1;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-bottom: 10px;
 }
 
-.navbar-right {
-	padding-top: 15px;
+.sign-in-form {
+	align: center;
 }
