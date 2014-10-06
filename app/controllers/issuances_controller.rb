@@ -1,6 +1,6 @@
 class IssuancesController < ApplicationController
   def index
-  	@issuances = Issuance.all
+  	@issuances = Issuance.order('issuances.created_at DESC').page(params[:page])
   end
 
   def show

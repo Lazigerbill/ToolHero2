@@ -2,7 +2,7 @@ class ToolsController < ApplicationController
 
 	def index
     if params[:tag]
-      @tools = Tool.tagged_with(params[:tag]).most_recent_five
+      @tools = Tool.tagged_with(params[:tag])
     else
   	 @tools = Tool.order('tools.created_at DESC').page(params[:page])
     end  

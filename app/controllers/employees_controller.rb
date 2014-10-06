@@ -3,7 +3,7 @@ class EmployeesController < ApplicationController
   	if params[:tag]
   		@employees = Employee.tagged_with(params[:tag])
   	else
-  		@employees = Employee.all.page(params[:page])
+  		@employees = Employee.order('employees.created_at DESC').page(params[:page])
   	end
   end
 
@@ -48,7 +48,7 @@ class EmployeesController < ApplicationController
   private
 
   def employee_params
-  	params.require(:employee).permit(:first_name, :last_name, :barcode)
+  	params.require(:employee).permit(:first_name, :last_name, :barcode, :tag_list)
   end
 
 end

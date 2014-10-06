@@ -15,3 +15,22 @@ Tool.create({
   }
 )
 end
+
+100.times do |i|
+
+Issuance.create({
+  employee_id: "Issuance#{i}",
+  tool_id: "Issuance#{i}",
+  }
+)
+end
+
+100.times do |i|
+
+Employee.create({
+  first_name: "Employee#{i}",
+  last_name: "Employee#{i}",
+  barcode: "Barcode#{i}",
+  }
+)
+end
