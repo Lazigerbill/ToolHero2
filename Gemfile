@@ -24,6 +24,7 @@ gem 'counter_culture', '~> 0.1.23'
 gem 'simple_form'
 gem "select2-rails"
 gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 gem 'high_voltage', '~> 2.2.1'
 
 

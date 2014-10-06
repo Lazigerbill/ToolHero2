@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+100.times do |i|
+
+Tool.create({
+  barcode: "Tool#{i}",
+  description: "Description#{i}",
+  quantity: i,
+  notes: i,
+  }
+)
+end
