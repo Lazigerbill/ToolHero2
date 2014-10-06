@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
 
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
   resources :companies
   resources :dashboards
   resources :tools
   resources :issuances
   resources :employees
+  resources :after_signup
 
   get 'tags/:tag', to: 'tools#index', as: :tag
-  
+
 
 
 

@@ -1,0 +1,16 @@
+<h2>Step One</h2>
+
+<%= form_for @user, url: wizard_path do |f| %>
+	<div class="form-group">
+		<%= f.label :first_name %>
+		<%= f.text_field :first_name, class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.label :last_name %>
+		<%= f.text_field :last_name, class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.submit "Next", class: "btn btn-primary" %>
+	</div>
+<% end %>
+
