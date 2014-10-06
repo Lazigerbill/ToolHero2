@@ -1,6 +1,6 @@
 class Tool < ActiveRecord::Base
 
-	has_many :tool_transactions
+	has_many :issuances
 	belongs_to :manufacturer
 
 	acts_as_taggable

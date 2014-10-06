@@ -4,7 +4,7 @@ class ToolsController < ApplicationController
     if params[:tag]
       @tools = Tool.tagged_with(params[:tag])
     else
-  	 @tools = Tool.all
+  	 @tools = Tool.all.page(params[:page])
     end  
   end
 

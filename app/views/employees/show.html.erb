@@ -1,0 +1,12 @@
+<h1>Employees#show</h1>
+<p>Find me in app/views/employees/show.html.erb</p>
+
+<div>
+	<p><strong>Tool Description:</strong></p>
+	<p><%= @employee.first_name %></p>
+	<p><%= @employee.last_name %></p>
+
+	<p><%= @employee.barcode %></p>
+</div>
+
+<%= link_to "Back to Employees", employees_path %>

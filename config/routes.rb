@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
 
+
   devise_for :users
   resources :companies
   resources :dashboards
   resources :tools
+  resources :issuances
+  resources :employees
 
   get 'tags/:tag', to: 'tools#index', as: :tag
+  
 
 
 
