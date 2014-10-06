@@ -1,13 +1,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900,400italic);
 
 body {
 	background-color: #F2F2F2;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, 'Lato', sans-serif;
+	font-weight: 300px;
 }
 
-.navbar-inverse {
+.navbar-default {
+	background-color: #FFF;
 	border-radius: 0px !important;
 }
+
+// .navbar-inverse {
+// 	border-radius: 0px !important;
+// }
 
 .content-box {
 	background-color: #fff;
