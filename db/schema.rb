@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141005051249) do
+ActiveRecord::Schema.define(version: 20141006193757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,12 @@ ActiveRecord::Schema.define(version: 20141005051249) do
     t.datetime "updated_at"
   end
 
+  create_table "inventory_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "issuances", force: true do |t|
     t.integer  "employee_id"
     t.integer  "tool_id"
@@ -47,6 +53,22 @@ ActiveRecord::Schema.define(version: 20141005051249) do
     t.string   "outgoing_condition"
     t.string   "incoming_condition"
     t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "issue_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "line_items", force: true do |t|
+    t.integer  "tools_id"
+    t.datetime "issued_at"
+    t.datetime "due_date"
+    t.integer  "quantity"
+    t.string   "outgoing_condition"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
