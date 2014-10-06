@@ -1,6 +1,6 @@
 
 <div class="page-header">
-  <h1>Transactions </h1><p><%= page_entries_info @issuances %></p><p class="pull-right"><%= link_to 'Add', new_issuance_path, class: "btn btn-primary btn-sm" %></p>
+  <h1>Transactions </h1><p><%= page_entries_info @issuances %></p><p class="pull-right"><%= link_to 'Issue Tool', new_issuance_path, class: "btn btn-primary btn-sm" %> <%= link_to 'Tool Return', new_issuance_path, class: "btn btn-default btn-sm" %></p>
 </div>
   
     <div class="row">
@@ -35,5 +35,4 @@
       </div>
     </div>
 
-<%= link_to 'Issue Tool', new_issuance_path, class: "btn btn-primary btn-sm" %> <%= link_to 'Tool Return', new_issuance_path, class: "btn btn-default btn-sm" %>
 <p><%= paginate @issuances, :theme => 'twitter-bootstrap-3' %></p>

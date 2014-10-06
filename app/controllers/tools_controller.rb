@@ -3,6 +3,8 @@ class ToolsController < ApplicationController
 	def index
     if params[:tag]
       @tools = Tool.tagged_with(params[:tag])
+    elsif 
+      @tools = Tool.all.page(params[:page])
     else
   	 @tools = Tool.order('tools.created_at DESC').page(params[:page])
     end  
