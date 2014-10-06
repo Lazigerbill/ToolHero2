@@ -31,6 +31,8 @@ gem 'high_voltage', '~> 2.2.1'
 group :development, :test do 
 	gem 'spring'
 	gem 'rspec-rails', '~> 3.0.0'
+	gem 'pry-rails'
+	gem 'quiet_assets'
 	# gem 'capistrano-rails'
 end
 
