@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Employees</h1>
+  <h1>Employees</h1><br><%= page_entries_info @employees %><p class="pull-right"><%= link_to 'Add', new_employee_path, class: "btn btn-primary btn-sm" %></p>
 </div>
   
     <div class="row">
@@ -28,5 +28,4 @@
         </table>
       </div>
     </div>
-
-<%= link_to 'Add', new_employee_path, class: "btn btn-primary btn-sm" %>
+<p><%= paginate @employees, :theme => 'twitter-bootstrap-3' %></p>
