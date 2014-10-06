@@ -15,6 +15,10 @@
 	    </div>
 	 	<% end %>
 
+		<div class="from-group">
+			<%= link_to "Add item", new_item_path, class: "btn btn-success" %>  <%= f.submit "submit", class: "btn btn-primary" %> 
+		</div><br>
+
 		<div class="form-group">
 			<%= f.label :issued_at, "Issued On" %>
 			<%= f.text_field :issued_at, :value => Time.now.in_time_zone("Eastern Time (US & Canada)"), class: "form-control" %>
@@ -34,12 +38,6 @@
 		<div class="form-group">
 			<%= f.label :due_date %><br>
 			<%= f.date_select :due_date, class: "form-control" %>
-		</div>
-		
-
-	
-		<div class="from-group">
-			<%= link_to "Add item", class: "btn btn-success" %>  <%= f.submit "submit", class: "btn btn-primary" %> 
 		</div>
 	<% end %>
 

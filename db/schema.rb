@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20141006185425) do
 
   # These are extensions that must be enabled in order to support this database
@@ -59,6 +60,16 @@ ActiveRecord::Schema.define(version: 20141006185425) do
 
   create_table "issue_types", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "line_items", force: true do |t|
+    t.integer  "tools_id"
+    t.datetime "issued_at"
+    t.datetime "due_date"
+    t.integer  "quantity"
+    t.string   "outgoing_condition"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
