@@ -1,7 +1,7 @@
 class AfterSignupController < ApplicationController
 	include Wicked::Wizard
 
-	steps :personal, :company, :employee, :tool
+	steps :personal
 
 	def show
 		@user = current_user
@@ -10,9 +10,10 @@ class AfterSignupController < ApplicationController
 	end
 
 	def update
+
 		@user = current_user
-		@user.update_attributes(user_params)
-		render_wizard @user
+			@user.update_attributes(user_params)
+			render_wizard @user
 	end
 
 	private
