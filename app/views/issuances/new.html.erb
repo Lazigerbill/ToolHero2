@@ -25,16 +25,17 @@
 		</div>
 		<div class="form-group">
 			<%= f.label :tool_id %>
-			<%= f.text_field :tool_id, class: "form-control", :placeholder => "Scan Tool Barcode", autofocus: true %>
+			<%= f.text_field :tool_id, class: "form-control", :placeholder => "Scan Tool Barcode" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :quantity %>
+			<%= f.text_field :quantity, class: "form-control" %>
 		</div>
 		<div class="form-group">
 			<%= f.label :due_date %><br>
 			<%= f.date_select :due_date, class: "form-control" %>
 		</div>
-		<div class="form-group">
-			<%= f.label :returned_at %><br>
-			<%= f.date_select :returned_at, class: "form-control" %>
-		</div>
+		
 
 	
 		<div class="from-group">

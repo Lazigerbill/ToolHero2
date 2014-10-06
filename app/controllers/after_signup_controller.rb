@@ -1,7 +1,7 @@
 class AfterSignupController < ApplicationController
 	include Wicked::Wizard
 
-	steps :personal
+	steps :personal, :company, :employee, :tool
 
 	def show
 		@user = current_user

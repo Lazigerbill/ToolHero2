@@ -8,9 +8,17 @@ body {
 	font-weight: 300px;
 }
 
+.container {
+	width: 980px;
+}
+
 .navbar-default {
 	background-color: #FFF;
 	border-radius: 0px !important;
+}
+
+ul.nav a:hover { 
+	color: #F7CA18 !important; 
 }
 
 // .navbar-inverse {

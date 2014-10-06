@@ -10,8 +10,8 @@ class Tool < ActiveRecord::Base
 
 
 	def quantity_on_hand
-		outstanding_tool_transaction = tool_transactions.where("returned_at is null")
-		tool_transactions_total = outstanding_tool_transaction.map { |transaction| transaction.quantity }.sum
-		quantity - tool_transactions_total
-	end
+  		outstanding_issuances = issuances.where("returned_at is null")
+  		issuance_total = outstanding_issuances.map{ |issuance| issuance.quantity }.sum
+  		quantity - issuance_total
+  	end
 end
