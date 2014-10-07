@@ -3,11 +3,10 @@
 </div>
   
     <div class="row">
-      <div class="col-sm-9">
+      <div class="col-sm-12">
         <table class="table table-hover info-list">
           <thead>
             <tr>
-            	<th>Tags</th>
             	<th>First Name</th>
               <th>Last Name</th>
               <th>Barcode ID</th>
@@ -17,7 +16,6 @@
           <tbody>
             <% @employees.each do |employee| %>
               <tr>
-                <td><%= raw employee.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></td>
                 <td><%= employee.first_name %></td>
                 <td><%= employee.last_name %></td>
                 <td><%= employee.barcode %></td>

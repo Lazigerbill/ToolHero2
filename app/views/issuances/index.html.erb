@@ -8,14 +8,14 @@
         <table class="table table-hover info-list">
           <thead>
             <tr>
-            <th>Transaction No</th>
+            <th>No</th>
              <th>Employee</th>
              <th>Tool Barcode</th>
              <th>Issued At</th>
              <th>Due Date</th>
              <th>Returned At</th>
              <th>Quantity</th>
-             <th colspan="3"></th>
+             <th colspan="2"></th>
             </tr>
           </thead>
 
@@ -23,15 +23,14 @@
             <% @issuances.each do |issuance| %>
               <tr>
               	<td><%= issuance.id %></td>
-                <td><%= issuance.employee_id %></td>
-                <td><%= issuance.barcode %></td>
+                <td><%= issuance.employee_barcode %></td>
+                <td><%= issuance.tool_barcode %></td>
                 <td><%= issuance.issued_at %></td>
                 <td><%= issuance.due_date %></td>
                 <td><%= issuance.returned_at %></td>
                 <td><%= issuance.quantity %></td>
                 <td><%= link_to 'Show', issuance %></td>
                 <td><%= link_to 'Edit', edit_issuance_path(issuance) %></td>
-                <td><%= link_to 'Destroy', issuance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
             <% end %>
           </tbody>
