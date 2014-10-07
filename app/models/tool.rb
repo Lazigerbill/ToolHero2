@@ -14,4 +14,10 @@ class Tool < ActiveRecord::Base
   		issuance_total = outstanding_issuances.map{ |issuance| issuance.quantity }.sum
   		quantity - issuance_total
   	end
+
+  	def self.import(file)
+  		CSV.foreach(file.path, headers: true) do |row|
+  			Tool.create! row.to_hash
+  		end 
+  	end 
 end

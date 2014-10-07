@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => "registrations" }
   resources :companies
   resources :dashboards
-  resources :tools
+  resources :tools do
+    collection { post :import }
+  end 
   resources :issuances
   resources :employees
   resources :after_signup
