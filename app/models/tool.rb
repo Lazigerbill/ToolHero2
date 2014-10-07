@@ -1,7 +1,8 @@
 class Tool < ActiveRecord::Base
 
-	has_many :issuances
-	belongs_to :manufacturer
+	belongs_to :company
+  has_many :issuances
+  belongs_to :inventory_type
 
 	acts_as_taggable
 
@@ -17,7 +18,14 @@ class Tool < ActiveRecord::Base
 
   	def self.import(file)
   		CSV.foreach(file.path, headers: true) do |row|
-  			Tool.create! row.to_hash
+        tool = Tool.find_or_create_by(:barcode => row["barcode"])
+        row.to_hash.each do |key, value|
+          if tool.has_attribute?(key)
+            tool.send("#{key}=", value)
+          end
+        end
+        tool.save!
   		end 
   	end 
+
 end
