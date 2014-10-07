@@ -2,6 +2,7 @@ class Tool < ActiveRecord::Base
 
 	has_many :issuances
 	belongs_to :manufacturer
+	belongs_to :company
 
 	acts_as_taggable
 
