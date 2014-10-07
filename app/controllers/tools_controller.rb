@@ -10,6 +10,11 @@ class ToolsController < ApplicationController
     end  
   end
 
+  def import
+    Tool.import(params[:file])
+    redirect_to root_url, notice: "Tools imported."
+  end
+
   def new
   	@tool = Tool.new
   end
@@ -52,7 +57,7 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-  	params.require(:tool).permit(:barcode, :description, :warranty_end, :model_number, :calibration_end, :quantity, :notes, :tag_list, :image)
+  	params.require(:tool).permit(:barcode, :description, :warranty_end, :model_number, :calibration_end, :quantity, :notes, :tag_list, :image, :file)
   end
 
 

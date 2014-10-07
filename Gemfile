@@ -25,6 +25,8 @@ gem 'simple_form'
 gem "select2-rails"
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+gem 'roo'
+gem 'pry-rails'
 gem 'high_voltage', '~> 2.2.1'
 
 
