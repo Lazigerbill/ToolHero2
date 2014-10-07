@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   belongs_to :company
   has_many :issuances
   has_many :tools, through: :issuances
+  
 end
