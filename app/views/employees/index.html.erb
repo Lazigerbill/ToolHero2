@@ -7,6 +7,7 @@
         <table class="table table-hover info-list">
           <thead>
             <tr>
+              <th></th>
             	<th>First Name</th>
               <th>Last Name</th>
               <th>Barcode ID</th>
@@ -16,6 +17,7 @@
           <tbody>
             <% @employees.each do |employee| %>
               <tr>
+                <td><%= image_tag employee.avatar.url(:thumb) %></td>
                 <td><%= employee.first_name %></td>
                 <td><%= employee.last_name %></td>
                 <td><%= employee.barcode %></td>
