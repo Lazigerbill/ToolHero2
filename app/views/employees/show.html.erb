@@ -1,12 +1,23 @@
-<h1>Employees#show</h1>
-<p>Find me in app/views/employees/show.html.erb</p>
 
-<div>
-	<p><strong>Tool Description:</strong></p>
-	<p><%= @employee.first_name %></p>
-	<p><%= @employee.last_name %></p>
+<div class="container-fliud">
 
-	<p><%= @employee.barcode %></p>
+	<div class="col-md-4">
+		<p><%= image_tag @employee.avatar.url(:medium) %></p>
+		<%= link_to "Back to Employees", employees_path %>
+  	</div>
+
+  	<div class="col-md-1"></div>
+
+	<div class="col-md-7">
+		
+		<h1><%= @employee.first_name %> <%= @employee.last_name %></h1></br>
+		<strong>First Name:</strong>
+		<p><%= @employee.first_name %></p>
+		<strong>Last Name:</strong>
+		<p><%= @employee.last_name %></p>
+		<strong>Barcode ID:</strong>
+		<p><%= @employee.barcode %></p>
+	</div>
+
 </div>
 
-<%= link_to "Back to Employees", employees_path %>
