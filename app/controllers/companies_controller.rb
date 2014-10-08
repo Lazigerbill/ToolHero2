@@ -10,8 +10,13 @@ class CompaniesController < ApplicationController
 
 	def create
 		@company = Company.new(company_params)
-		@company.save
+		if @company.save
+			Tool.import(params[:tool_import_file])
+			Employee.import(params[:employee_import_file])
 			redirect_to "/companies"
+		else 
+			render :new 
+		end 
 	end
 
 	def show
