@@ -27,6 +27,7 @@ gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'roo'
 gem 'high_voltage', '~> 2.2.1'
+gem 'pg_search'
 
 
 group :development, :test do 

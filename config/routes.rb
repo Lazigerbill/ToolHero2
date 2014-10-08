@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :search
+
   devise_for :users, :controllers => { :registrations => "registrations" }
   resources :companies
   resources :dashboards
