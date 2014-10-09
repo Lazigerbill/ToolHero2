@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
 
+
   resources :search
+
+  get 'settings/index'
+
 
   devise_for :users, :controllers => { :registrations => "registrations" }
   resources :companies
