@@ -1,23 +1,23 @@
 class EmployeesController < ApplicationController
   def index
-  	if params[:tag]
-  		@employees = Employee.tagged_with(params[:tag])
-  	else
-  		@employees = Employee.order('employees.created_at DESC').page(params[:page])
-  	end
-  end
+    if params[:tag]
+        @employees = Employee.tagged_with(params[:tag])
+      elsif
+        @employees = Employee.order('employees.created_at DESC').page(params[:page])
+      end
+    end
 
-  def new
-  	@employee = Employee.new
-  end
+    def new
+     @employee = Employee.new
+   end
 
-  def create
-  	@employee = Employee.new(employee_params)
-  	if @employee.save
-  		redirect_to "/employees"
-  	else
-  		render :new
-  	end
+   def create
+     @employee = Employee.new(employee_params)
+     if @employee.save
+      redirect_to "/employees"
+    else
+      render :new
+    end
   end
 
 

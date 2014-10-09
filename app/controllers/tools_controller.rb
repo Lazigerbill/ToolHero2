@@ -2,7 +2,6 @@ class ToolsController < ApplicationController
 
 	def index
     if params[:tag]
-      # @tools = Tool.tagged_with(params[:tag])
       @tools = Tool.tagged_with(params[:tag])
     elsif 
       @tools = Tool.all.page(params[:page])

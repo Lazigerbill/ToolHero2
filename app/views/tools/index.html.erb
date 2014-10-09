@@ -1,14 +1,6 @@
 <div class="page-header">
   <h1>Tools</h1><p><%= page_entries_info @tools %></p><p class="pull-right"><%= link_to 'Add', new_tool_path, class: "btn btn-primary btn-sm" %></p>
 </div>
-  
-  <%= form_tag tools_path, method: :get do %>
-  <p>
-    <%= text_field_tag :query, params[:query] %>
-    <%= submit_tag "Search", description: nil %>
-  </p>
-
-  <% end %>
 
     <div class="row">
       <div class="col-sm-12">
