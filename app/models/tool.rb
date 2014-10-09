@@ -18,11 +18,13 @@ class Tool < ActiveRecord::Base
 
     # before_save :set_issue_type
 
-  def quantity_on_hand
-      outstanding_issuances = issuances.where("returned_at is null")
-      issuance_total = outstanding_issuances.map{ |issuance| issuance.quantity }.sum
-      (quantity || 0) - (issuance_total || 0)
-    end
+
+	def quantity_on_hand
+  		outstanding_issuances = issuances.where("returned_at is null")
+  		issuance_total = outstanding_issuances.map{ |issuance| issuance.quantity }.sum
+  		(quantity || 0) - (issuance_total || 0)
+  end
+
 
 
     def self.import(file)

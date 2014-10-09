@@ -17,6 +17,7 @@ class IssuancesController < ApplicationController
 
   def create
   	@issuance = Issuance.new(issuance_params)
+    # binding.pry
   	if @issuance.save
   		redirect_to "/issuances"
   	else
@@ -25,6 +26,20 @@ class IssuancesController < ApplicationController
   	# 	format.js {}
   	# 	format.html {redirect_to "/issuance"}
   	end
+  end
+
+  def edit
+    @issuance = Issuance.find(params[:id])
+  end
+
+  def update
+    @issuance = Issuance.find(params[:id])
+
+    if @issuance.update_attributes(issuance_params)
+      redirect_to @issuance
+    else
+      render :edit
+    end 
   end
 
   private
