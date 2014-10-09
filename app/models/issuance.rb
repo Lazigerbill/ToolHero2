@@ -8,7 +8,9 @@ class Issuance < ActiveRecord::Base
 	belongs_to :user
 	has_many :line_items
 
+  validate :quantity_is_available
   validate :quantity_on_hand_cannot_be_less_than_zero
+
 
 	delegate :barcode, :to => :tool, :prefix => true, :allow_nil => true
 	delegate :barcode, :to => :employee, :prefix => true, :allow_nil => true
@@ -35,7 +37,9 @@ class Issuance < ActiveRecord::Base
   end
 
   def quantity_is_available
-    
+    if quantity > tool.quantity
+      errors.add(:quantity, " available: #{tool.quantity}")
+    end 
   end
 
 end
