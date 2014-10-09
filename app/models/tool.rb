@@ -20,9 +20,9 @@ class Tool < ActiveRecord::Base
 
 
 	def quantity_on_hand
-  		outstanding_issuances = issuances.where("returned_at is null")
-  		issuance_total = outstanding_issuances.map{ |issuance| issuance.quantity }.sum
-  		(quantity || 0) - (issuance_total || 0)
+  	outstanding_issuances = issuances.where("returned_at is null")
+  	issuance_total = outstanding_issuances.map{ |issuance| issuance.quantity }.sum
+  	(quantity || 0) - (issuance_total || 0)
   end
 
 
@@ -38,6 +38,8 @@ class Tool < ActiveRecord::Base
         tool.save!
       end 
     end 
+
+    
     # def set_issue_type
     #   case self.inventory_type_id
     #   when 1

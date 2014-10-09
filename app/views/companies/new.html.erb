@@ -1,3 +1,4 @@
+<div class="col-md-6">
 <div class="form-container">
   <%= form_for( @company, :html => { :multipart => true } ) do |f| %>
     <% if @company.errors.any? %>
@@ -11,6 +12,7 @@
         </ul>
       </div>
     <% end %>
+    
     <div class="form-group">
       <%= f.label :name %>
       <%= f.text_field :name, class: "form-control" %>
@@ -66,5 +68,6 @@
     </div>
   <% end %>
 
+</div>
 </div>
 
