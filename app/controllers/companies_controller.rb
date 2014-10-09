@@ -11,8 +11,12 @@ class CompaniesController < ApplicationController
 	def create
 		@company = Company.new(company_params)
 		if @company.save
-			Tool.import(params[:tool_import_file])
-			Employee.import(params[:employee_import_file])
+			if !params[:tool_import_file].blank?
+				Tool.import(params[:tool_import_file])
+			end
+			if !params[:employee_import_file].blank?
+				Employee.import(params[:employee_import_file])
+			end
 			redirect_to "/companies"
 		else 
 			render :new 
