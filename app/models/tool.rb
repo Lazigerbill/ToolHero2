@@ -1,6 +1,8 @@
 class Tool < ActiveRecord::Base
-  include PgSearch
-  multisearchable :against => [:description, :barcode]
+  include PgSearch   
+  pg_search_scope :search_including_tags, 
+    :against => [:description, :barcode],
+    :associated_against => {:tags => [:name]}  
 
   belongs_to :company
   belongs_to :inventory_type

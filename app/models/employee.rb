@@ -1,6 +1,7 @@
 class Employee < ActiveRecord::Base
 	include PgSearch
-	multisearchable :against => [:first_name, :last_name, :barcode]
+  pg_search_scope :search_including_tags, 
+    :against => [:first_name, :last_name, :barcode]
 
 	belongs_to :company
 	has_many :tools, through: :issuances
