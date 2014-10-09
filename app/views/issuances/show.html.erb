@@ -1,3 +1,13 @@
-<h1>Issuances#show</h1>
-<p>Find me in app/views/issuances/show.html.erb</p>
 
+
+	
+<h3>Transaction ID: <%= @issuance.id %> </h3>
+<p>Employee Barcode: <%= @issuance.employee_barcode %></p>
+<p>Tool Barcode: <%= @issuance.tool_barcode %></p>
+<p>Issued on: <%= @issuance.issued_at %></p>
+<p>Due date: <%= @issuance.due_date %></p>
+<p>Returned on: <%= @issuance.returned_at %></p>
+<p>Quantity checked out: <%= @issuance.quantity %></p>
+
+
+<%= link_to "Back to Tools", issuances_path %>

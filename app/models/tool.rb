@@ -19,7 +19,7 @@ class Tool < ActiveRecord::Base
   		outstanding_issuances = issuances.where("returned_at is null")
   		issuance_total = outstanding_issuances.map{ |issuance| issuance.quantity }.sum
   		(quantity || 0) - (issuance_total || 0)
-  	end
+  end
 
 
   	def self.import(file)
