@@ -1,4 +1,6 @@
 class Employee < ActiveRecord::Base
+	include PgSearch
+	multisearchable :against => [:first_name, :last_name, :barcode]
 
 	belongs_to :company
 	has_many :tools, through: :issuances
@@ -18,4 +20,5 @@ class Employee < ActiveRecord::Base
         employee.save!
   		end 
   	end 
+
 end

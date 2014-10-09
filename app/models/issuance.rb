@@ -23,8 +23,8 @@ class Issuance < ActiveRecord::Base
 
   	def add_employee_by_barcode
   		employee = Employee.find_by_barcode(self.incoming_employee_barcode)
-  		binding.pry
-    	self.employee_id = employee.id
+    	binding.pry
+      self.employee_id = employee.id
   	end
 
 end

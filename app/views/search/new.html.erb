@@ -1,13 +1,41 @@
-<div class="page-header">
-  <h1>Tools</h1><p><%= page_entries_info @tools %></p><p class="pull-right"><%= link_to 'Add', new_tool_path, class: "btn btn-primary btn-sm" %></p>
-</div>
+<div style="padding-top: 100px">
 
-    <div class="row">
+   <div class="row">
       <div class="col-sm-12">
         <table class="table table-hover info-list">
           <thead>
             <tr>
-            	<th>Image</th>
+            	<th>First Name</th>
+              <th>Last Name</th>
+              <th>Barcode ID</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @employees.each do |employee| %>
+              <tr>
+                <td><%= employee.first_name %></td>
+                <td><%= employee.last_name %></td>
+                <td><%= employee.barcode %></td>
+                <td><%= link_to 'Show', employee %></td>
+                <td><%= link_to 'Edit', edit_employee_path(employee) %>
+                </td>
+                <td><%= link_to 'Destroy', employee, class: "label label-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div></br>
+
+   <div class="row">
+      <div class="col-sm-12">
+        <table class="table table-hover info-list">
+          <thead>
+            <tr>
+              <th>Image</th>
               <th>Tags</th>
               <th>Barcode ID</th>
               <th>Description</th>
@@ -37,10 +65,4 @@
       </div>
     </div>
 
-<p><%= paginate @tools, :theme => 'twitter-bootstrap-3' %></p>
-
-<h2> Import Tools </h2>
-<%= form_tag import_tools_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import" %>
-<% end %>
+</div>
