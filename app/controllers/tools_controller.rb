@@ -34,7 +34,6 @@ class ToolsController < ApplicationController
 
   def edit
   	@tool = Tool.find(params[:id])
-   
   end
 
   def update
