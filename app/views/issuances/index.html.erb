@@ -6,7 +6,7 @@
 <div>
   <p class="pull-right">
     <%= link_to 'Issue Tool', new_issuance_path, class: "btn btn-primary btn-sm" %> 
-    <%= link_to 'Tool Return', new_issuance_path, class: "btn btn-default btn-sm" %>
+    <%#= link_to 'Tool Return', new_issuance_path, class: "btn btn-default btn-sm" %>
   </p>
 </div>
     
@@ -39,7 +39,7 @@
                 <td><%= issuance.returned_at %></td>
                 <td><%= issuance.quantity %></td>
                 <td><%= link_to 'Show', issuance %></td>
-                <td><%= link_to 'Edit', edit_issuance_path(issuance) %></td>
+                <td><%= link_to 'Return Tool', edit_issuance_path(issuance) %></td>
               </tr>
             <% end %>
           </tbody>

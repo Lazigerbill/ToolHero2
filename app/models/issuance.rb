@@ -8,8 +8,8 @@ class Issuance < ActiveRecord::Base
 	belongs_to :user
 	has_many :line_items
 
-  validate :quantity_is_available
-  validate :quantity_on_hand_cannot_be_less_than_zero
+  validate :quantity_is_available, unless: :returned_at?
+  validate :quantity_on_hand_cannot_be_less_than_zero, unless: :returned_at?
 
 
 	delegate :barcode, :to => :tool, :prefix => true, :allow_nil => true
@@ -17,6 +17,7 @@ class Issuance < ActiveRecord::Base
 
 	before_validation :add_tool_by_barcode
 	before_save :add_employee_by_barcode
+
 
 	def add_tool_by_barcode
 		tool = Tool.find_by_barcode(self.incoming_tool_barcode)
@@ -37,10 +38,18 @@ class Issuance < ActiveRecord::Base
   end
 
   def quantity_is_available
-    if quantity > tool.quantity
+    if quantity >= tool.quantity
       errors.add(:quantity, " available: #{tool.quantity}")
     end 
   end
+
+  # def tool_being_returned
+  # 	if tool.quantity_on_hand == 0
+  # end
+
+
+  # if tool is being issued check if there are any on hand, if so..issue tool and show how many are left on hand.
+  # if tool is being returned check what the total quantity is, add 
 
 
 end

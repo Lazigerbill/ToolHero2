@@ -16,6 +16,7 @@ class AfterSignupController < ApplicationController
 	# 		render_wizard @user
 	# end
 
+
 	# private
 
 	# def user_params
