@@ -1,24 +1,24 @@
 class AfterSignupController < ApplicationController
-	include Wicked::Wizard
+	# include Wicked::Wizard
 
-	steps :personal, :company, :employee, :tool
+	# steps :personal, :company, :employee, :tool
 
-	def show
-		@user = current_user
+	# def show
+	# 	@user = current_user
 
-		render_wizard
-	end
+	# 	render_wizard
+	# end
 
-	def update
+	# def update
 
-		@user = current_user
-			@user.update_attributes(user_params)
-			render_wizard @user
-	end
+	# 	@user = current_user
+	# 		@user.update_attributes(user_params)
+	# 		render_wizard @user
+	# end
 
-	private
+	# private
 
-	def user_params
-		params.require(:user).permit(:first_name, :last_name)
-	end
+	# def user_params
+	# 	params.require(:user).permit(:first_name, :last_name)
+	# end
 end
