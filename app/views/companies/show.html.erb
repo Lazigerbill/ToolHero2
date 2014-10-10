@@ -1,0 +1,26 @@
+
+<div class="container-fliud">
+
+		<h1><%= @company.name %></h1></br>
+		<strong>Address:</strong>
+		<p><%= @company.address %></p>
+		<strong>City:</strong>
+		<p><%= @company.city %></p>
+		<strong>Country:</strong>
+		<p><%= @company.country %></p>
+		<strong>State:</strong>
+		<p><%= @company.state %></p>
+		<strong>Zip:</strong>
+		<p><%= @company.zip %></p>
+		<strong>Email:</strong>
+		<p><%= @company.email %></p>
+		<strong>Phone:</strong>
+		<p><%= @company.telephone %></p>
+		<strong>Contact:</strong>
+		<p><%= @company.contact_person %></p>
+	
+
+	<%= link_to "Checkout your Tools", tools_path %> <br>
+	<%= link_to "Back to Employees", employees_path %>
+
+</div>
