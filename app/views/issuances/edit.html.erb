@@ -1,5 +1,5 @@
 <div class="page-header">
-	  <h1>Edit Record</h1>
+	  <h1>Return Tool</h1>
 </div>
 	
 
@@ -20,7 +20,7 @@
 
 		<div class="form-group">
 			<%= f.label :issued_at, "Issued On" %>
-			<%= f.text_field :issued_at, :value => Time.now.in_time_zone("Eastern Time (US & Canada)"), class: "form-control", :disabled => true %>
+			<%= f.text_field :issued_at, :value => Time.now.in_time_zone("Eastern Time (US & Canada)"), class: "form-control" %>
 		</div>
 		<div class="form-group">
 			<%= f.label :incoming_employee_barcode, "Employee Barcode" %>

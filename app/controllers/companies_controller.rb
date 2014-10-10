@@ -17,7 +17,7 @@ class CompaniesController < ApplicationController
 			if !params[:employee_import_file].blank?
 				Employee.import(params[:employee_import_file])
 			end
-			redirect_to "/companies"
+			redirect_to "/companies/edit"
 		else 
 			render :new 
 		end 
@@ -35,17 +35,12 @@ class CompaniesController < ApplicationController
 		@company = Company.find(params[:id])
 
 		if @company.update_attributes(company_params)
-			redirect_to @company
+			redirect_to '/companies/edit'
 		else
 			render :edit
 		end
 	end
 
-	def destroy
-		@company = Company.find(params[:id])
-		@company.destroy
-		redirect_to companies_url
-	end
 
 	private
 
